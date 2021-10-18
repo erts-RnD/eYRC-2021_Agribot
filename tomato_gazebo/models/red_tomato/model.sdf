@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="red_tomato">
+      <link name="tomato_link">
+
+        <inertial>
+          <inertia>
+            <ixx>0.0001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0001</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001</izz>
+          </inertia>
+          <mass>0.1</mass>
+        </inertial>
+
+
+
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://red_tomato/meshes/red_tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.04</radius></sphere>
+        <!--     <mesh><uri>model://red_tomato/meshes/red_tomato.obj</uri></mesh> -->
+          </geometry>
+        </collision>
+      </link>
+    </model>
+</sdf>

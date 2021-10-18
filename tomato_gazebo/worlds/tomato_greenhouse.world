@@ -1,0 +1,3074 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <model name='farm'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='colision1'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.32 1 1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual1'>
+          <cast_shadows>0</cast_shadows>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://farm1/meshes/agriculture_world.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>1.42405 -8.25 0.15 -0.02 0.029 -0</pose>
+    </model>
+    <model name='green_house'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://green_house/meshes/greenhouse_cover.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://green_house/meshes/greenhouse_cover.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/GreenTransparent</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='link2'>
+        <collision name='collision2'>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://green_house/meshes/greenhouse_stand.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch2'>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://green_house/meshes/greenhouse_stand.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.2 1</diffuse>
+            <specular>0 0 0 0</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='link3'>
+        <pose frame=''>9.7 5.5 -0.2 3.14159 0.001593 3.14159</pose>
+        <collision name='logo'>
+          <geometry>
+            <mesh>
+              <scale>400 400 400</scale>
+              <uri>file://green_house/meshes/logo2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='logo_c'>
+          <geometry>
+            <mesh>
+              <scale>400 400 400</scale>
+              <uri>file://green_house/meshes/logo2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='logo' type='fixed'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <child>link3</child>
+        <parent>link2</parent>
+      </joint>
+      <pose frame=''>10.32 -9.82 0.1 1.57159 -0.001593 -3.14159</pose>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='plant00'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0 0.18 0 -0 -2.35319</pose>
+    </model>
+    <model name='trough00'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant01'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0.9 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough01'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0.9 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant02'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 1.8 0.18 0 -0 1.57</pose>
+    </model>
+    <model name='trough02'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 1.8 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant03'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 2.7 0.18 0 -0 0</pose>
+    </model>
+    <model name='trough03'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 2.7 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant04'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 3.6 0.18 0 -0 0</pose>
+    </model>
+    <model name='trough04'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 3.6 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant05'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 4.5 0.18 0 -0 0.785</pose>
+    </model>
+    <model name='trough05'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 4.5 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant06'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 5.4 0.18 0 -0 1.57</pose>
+    </model>
+    <model name='trough06'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 5.4 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant07'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 6.3 0.18 0 -0 1.57</pose>
+    </model>
+    <model name='trough07'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 6.3 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant08'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 7.2 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough08'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 7.2 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant09'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 8.1 0.18 0 -0 -2.35319</pose>
+    </model>
+    <model name='trough09'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 8.1 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant10'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 0 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough10'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 0 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant11'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 0.9 0.18 0 -0 1.57</pose>
+    </model>
+    <model name='trough11'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 0.9 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant12'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 1.8 0.18 0 -0 0</pose>
+    </model>
+    <model name='trough12'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 1.8 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant13'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 2.7 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough13'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 2.7 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant14'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 3.6 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough14'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 3.6 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant15'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 4.5 0.18 0 -0 0.785</pose>
+    </model>
+    <model name='trough15'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 4.5 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant16'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 5.4 0.18 0 -0 -2.35319</pose>
+    </model>
+    <model name='trough16'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 5.4 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant17'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 6.3 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough17'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 6.3 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant18'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 7.2 0.18 0 -0 -2.35319</pose>
+    </model>
+    <model name='trough18'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 7.2 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant19'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 8.1 0.18 0 -0 0</pose>
+    </model>
+    <model name='trough19'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2 8.1 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant20'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 0 0.18 0 -0 -2.35319</pose>
+    </model>
+    <model name='trough20'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 0 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant21'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 0.9 0.18 0 -0 0</pose>
+    </model>
+    <model name='trough21'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 0.9 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant22'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 1.8 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough22'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 1.8 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant23'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 2.7 0.18 0 -0 -2.35319</pose>
+    </model>
+    <model name='trough23'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 2.7 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant24'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 3.6 0.18 0 -0 1.57</pose>
+    </model>
+    <model name='trough24'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 3.6 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant25'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 4.5 0.18 0 -0 -2.35319</pose>
+    </model>
+    <model name='trough25'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 4.5 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant26'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 5.4 0.18 0 -0 0.785</pose>
+    </model>
+    <model name='trough26'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 5.4 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant27'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 6.3 0.18 0 -0 0</pose>
+    </model>
+    <model name='trough27'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 6.3 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant28'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 7.2 0.18 0 -0 3.14</pose>
+    </model>
+    <model name='trough28'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 7.2 0.18 1.57 -0 1.57</pose>
+    </model>
+    <model name='plant29'>
+      <static>1</static>
+      <link name='tomato_plant_link'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://tomato_plant/meshes/tomato_plant.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 8.1 0.18 0 -0 0.785</pose>
+    </model>
+    <light name='user_directional_light_0' type='directional'>
+      <pose frame=''>0.077736 11.0068 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+    <model name='trough29'>
+      <static>1</static>
+      <link name='trough_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://trough/meshes/truf.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4 8.1 0.18 1.57 -0 1.57</pose>
+    </model>
+    <light name='user_directional_light_1' type='directional'>
+      <pose frame=''>6.06796 7.77329 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+    <light name='user_directional_light_2' type='directional'>
+      <pose frame=''>-9.54034 10.1498 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+    <state world_name='default'>
+      <sim_time>89 641000000</sim_time>
+      <real_time>90 964789043</real_time>
+      <wall_time>1624600844 65878301</wall_time>
+      <iterations>89641</iterations>
+      <model name='farm'>
+        <pose frame=''>1.42405 -8.25 0.15 -0.02 0.029 -0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.42405 -8.25 0.15 -0.02 0.029 -0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='green_house'>
+        <pose frame=''>10.32 -9.82 0.1 1.57159 -0.001593 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>10.32 -9.82 0.1 1.57159 -0.001593 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='link2'>
+          <pose frame=''>10.32 -9.82 0.1 1.57159 -0.001593 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='link3'>
+          <pose frame=''>0.628772 -10.0156 5.6156 1.57 0.001591 -0.001593</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant00'>
+        <pose frame=''>0 0 0.18 0 0 -2.35319</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 0 0.18 0 0 -2.35319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant01'>
+        <pose frame=''>0 0.9 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 0.9 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant02'>
+        <pose frame=''>0 1.8 0.18 0 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 1.8 0.18 0 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant03'>
+        <pose frame=''>0 2.7 0.18 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 2.7 0.18 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant04'>
+        <pose frame=''>0 3.6 0.18 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 3.6 0.18 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant05'>
+        <pose frame=''>0 4.5 0.18 0 -0 0.785</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 4.5 0.18 0 -0 0.785</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant06'>
+        <pose frame=''>0 5.4 0.18 0 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 5.4 0.18 0 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant07'>
+        <pose frame=''>0 6.3 0.18 0 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 6.3 0.18 0 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant08'>
+        <pose frame=''>0 7.2 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 7.2 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant09'>
+        <pose frame=''>0 8.1 0.18 0 0 -2.35319</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>0 8.1 0.18 0 0 -2.35319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant10'>
+        <pose frame=''>2 0 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 0 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant11'>
+        <pose frame=''>2 0.9 0.18 0 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 0.9 0.18 0 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant12'>
+        <pose frame=''>2 1.8 0.18 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 1.8 0.18 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant13'>
+        <pose frame=''>2 2.7 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 2.7 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant14'>
+        <pose frame=''>2 3.6 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 3.6 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant15'>
+        <pose frame=''>2 4.5 0.18 0 -0 0.785</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 4.5 0.18 0 -0 0.785</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant16'>
+        <pose frame=''>2 5.4 0.18 0 0 -2.35319</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 5.4 0.18 0 0 -2.35319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant17'>
+        <pose frame=''>2 6.3 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 6.3 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant18'>
+        <pose frame=''>2 7.2 0.18 0 0 -2.35319</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 7.2 0.18 0 0 -2.35319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant19'>
+        <pose frame=''>2 8.1 0.18 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>2 8.1 0.18 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant20'>
+        <pose frame=''>4 0 0.18 0 0 -2.35319</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 0 0.18 0 0 -2.35319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant21'>
+        <pose frame=''>4 0.9 0.18 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 0.9 0.18 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant22'>
+        <pose frame=''>4 1.8 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 1.8 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant23'>
+        <pose frame=''>4 2.7 0.18 0 0 -2.35319</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 2.7 0.18 0 0 -2.35319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant24'>
+        <pose frame=''>4 3.6 0.18 0 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 3.6 0.18 0 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant25'>
+        <pose frame=''>4 4.5 0.18 0 0 -2.35319</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 4.5 0.18 0 0 -2.35319</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant26'>
+        <pose frame=''>4 5.4 0.18 0 -0 0.785</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 5.4 0.18 0 -0 0.785</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant27'>
+        <pose frame=''>4 6.3 0.18 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 6.3 0.18 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant28'>
+        <pose frame=''>4 7.2 0.18 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 7.2 0.18 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant29'>
+        <pose frame=''>4 8.1 0.18 0 -0 0.785</pose>
+        <scale>1 1 1</scale>
+        <link name='tomato_plant_link'>
+          <pose frame=''>4 8.1 0.18 0 -0 0.785</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough00'>
+        <pose frame=''>0 0 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 0 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough01'>
+        <pose frame=''>0 0.9 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 0.9 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough02'>
+        <pose frame=''>0 1.8 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 1.8 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough03'>
+        <pose frame=''>0 2.7 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 2.7 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough04'>
+        <pose frame=''>0 3.6 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 3.6 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough05'>
+        <pose frame=''>0 4.5 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 4.5 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough06'>
+        <pose frame=''>0 5.4 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 5.4 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough07'>
+        <pose frame=''>0 6.3 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 6.3 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough08'>
+        <pose frame=''>0 7.2 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 7.2 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough09'>
+        <pose frame=''>0 8.1 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>0 8.1 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough10'>
+        <pose frame=''>2 0 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 0 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough11'>
+        <pose frame=''>2 0.9 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 0.9 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough12'>
+        <pose frame=''>2 1.8 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 1.8 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough13'>
+        <pose frame=''>2 2.7 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 2.7 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough14'>
+        <pose frame=''>2 3.6 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 3.6 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough15'>
+        <pose frame=''>2 4.5 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 4.5 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough16'>
+        <pose frame=''>2 5.4 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 5.4 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough17'>
+        <pose frame=''>2 6.3 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 6.3 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough18'>
+        <pose frame=''>2 7.2 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 7.2 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough19'>
+        <pose frame=''>2 8.1 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>2 8.1 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough20'>
+        <pose frame=''>4 0 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 0 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough21'>
+        <pose frame=''>4 0.9 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 0.9 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough22'>
+        <pose frame=''>4 1.8 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 1.8 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough23'>
+        <pose frame=''>4 2.7 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 2.7 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough24'>
+        <pose frame=''>4 3.6 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 3.6 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough25'>
+        <pose frame=''>4 4.5 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 4.5 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough26'>
+        <pose frame=''>4 5.4 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 5.4 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough27'>
+        <pose frame=''>4 6.3 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 6.3 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough28'>
+        <pose frame=''>4 7.2 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 7.2 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='trough29'>
+        <pose frame=''>4 8.1 0.18 1.57 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='trough_link'>
+          <pose frame=''>4 8.1 0.18 1.57 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='user_directional_light_0'>
+        <pose frame=''>0.077736 11.0068 1 0 -0 0</pose>
+      </light>
+      <light name='user_directional_light_1'>
+        <pose frame=''>6.06796 7.77329 1 0 -0 0</pose>
+      </light>
+      <light name='user_directional_light_2'>
+        <pose frame=''>-9.54034 10.1498 1 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>-5.47162 -32.8258 8.56704 -0 0.271643 1.11219</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

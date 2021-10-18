@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="plant_2">
+    	<static>true</static>
+      <include>
+        <uri>model://plant</uri>
+        <name>plant_2</name>
+        <pose> 0 0 -0.45 0 0 0.3385939</pose>
+      </include>
+
+            <include>
+        <uri>model://trough</uri>
+        <name>trough</name>
+        <pose>0 0 0 1.57 0 0</pose>
+      </include>
+
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_20</name>
+        <pose>-0.297 0.244 0.695 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_21</name>
+        <pose>0.164 0.199 1.684 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_22</name>
+        <pose>0.394 -0.151 0.705 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_23</name>
+        <pose>0.054 -0.308 1.158 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_24</name>
+        <pose>-0.236 -0.275 0.883 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_25</name>
+        <pose>-0.318 0.010 1.158 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_26</name>
+        <pose>0.351 0.120 1.158 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_27</name>
+        <pose>0.054 -0.308 1.599 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_28</name>
+        <pose>-0.236 -0.275 1.464 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_29</name>
+        <pose>-0.318 0.010 1.599 0 0 0</pose>
+      </include>
+
+
+  </model>
+</sdf>

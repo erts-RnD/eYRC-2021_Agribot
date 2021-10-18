@@ -1,0 +1,12 @@
+# Blender MTL File: 'rishi_edit_plant_extract.blend'
+# Material Count: 1
+
+newmtl tomato
+Ns 225.000000
+Ka 0.550000 0.550000 0.550000
+Kd 0.800000 0.039792 0.013297
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3

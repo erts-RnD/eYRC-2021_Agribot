@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="green_tomato">
+      <link name="tomato_link">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://green_tomato/meshes/green_tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+<!--             <sphere><radius>0.05</radius></sphere> -->
+            <mesh><uri>model://green_tomato/meshes/green_tomato.obj</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+</sdf>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+      <ode>
+        <solver>
+          <iters>50</iters>
+          <island_threads>4</island_threads>
+        </solver>
+      </ode>
+    </physics>
+
+    <scene>
+      <shadows>false</shadows>
+      <grid>false</grid>
+      <sky>
+        <clouds>
+          <speed>4</speed>
+        </clouds>
+      </sky>      
+    </scene>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+   <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_1</name>
+      <pose>-0.5 -0.5 0 0 0 0</pose>
+    </include>
+
+     <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_2</name>
+      <pose>-1.5 -1.5 0 0 0 0</pose>
+    </include>
+   <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_3</name>
+      <pose>0.5 0.5 0 0 0 0</pose>
+    </include>
+  <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_4</name>
+      <pose>1.5 1.5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_5</name>
+      <pose>2.5 2.5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_6</name>
+      <pose>-2.5 -2.5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_7</name>
+      <pose>-3.5 -3.5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_8</name>
+      <pose>3.5 3.5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_9</name>
+      <pose>-4.5 -4.5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tomato_plant</uri>
+      <name>plant_10</name>
+      <pose>4.5 4.5 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

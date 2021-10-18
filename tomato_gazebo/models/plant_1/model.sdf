@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="plant_1">
+    	<static>true</static>
+      <link name="plant_1_link">
+        <visual name="visual">
+          <pose> 0 0 -0.45 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://plant/meshes/plant.obj</uri>
+              <scale>1.10961 1.10961 1.10961</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box><size>0.1 0.1 0.1</size></box>
+<!--             <mesh>
+              <uri>model://plant/meshes/tomato_plant.obj</uri>
+              <scale>1.10961 1.10961 1.10961</scale>
+            </mesh> -->
+          </geometry>
+        </collision>
+      </link>
+      <include>
+        <uri>model://trough</uri>
+        <name>trough_1</name>
+        <pose>0 0 0 1.57 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_10</name>
+        <pose>-0.201 0.268 0.917 0 0 0</pose>
+      </include>
+
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_11</name>
+        <pose>0.181 0.231 1.714 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_12</name>
+        <pose>0.371 -0.171 1.608 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_13</name>
+        <pose>0.059 -0.345 0.978 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_14</name>
+        <pose>-0.263 -0.309 1.283 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_15</name>
+        <pose>-0.354 0.008 1.283 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_16</name>
+        <pose>0.389 0.130 1.096 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_17</name>
+        <pose>0.059 -0.345 1.950 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_18</name>
+        <pose>-0.263 -0.309 1.773 0 0 0</pose>
+      </include>
+
+      <include>
+        <uri>model://tomato</uri>
+        <name>tomato_19</name>
+        <pose>-0.354 0.008 1.773 0 0 0</pose>
+      </include>
+  </model>
+</sdf>

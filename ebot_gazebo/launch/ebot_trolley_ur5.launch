@@ -1,0 +1,30 @@
+
+<launch>
+<!--  ebot with ur5 -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ebot_gazebo)/urdf/ebot_trolley_ur5.xacro'"/>
+
+   
+ 	<arg name="x" default="0.76"/>
+    <arg name="y" default="-1.88"/>
+    <arg name="z" default="0.169"/>
+        
+
+        <!-- Spawn the robot model -->
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+        args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+
+
+
+	<arg name="static" default=""/>
+    <include 
+            file="$(find gazebo_ros)/launch/empty_world.launch">
+    </include> 
+          
+
+<!--  <include file="$(find tomato_gazebo)/launch/empty_world.launch"/> -->
+
+
+ 
+  
+</launch>

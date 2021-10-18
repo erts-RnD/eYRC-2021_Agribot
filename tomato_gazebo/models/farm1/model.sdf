@@ -1,0 +1,27 @@
+<?xml version ="1.0"?>
+<sdf version="1.6">
+  <model name="farm">
+    <static>true</static>
+    <link name="link">
+      <collision name="colision1">
+        <pose>0 0 0 0 0 0 </pose>
+          <geometry>
+            <box><size>2.32 1 1</size></box>
+          </geometry>
+      
+      </collision>
+
+      <visual name="visual1">
+        <cast_shadows>false</cast_shadows>
+	<pose> 0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://farm1/meshes/agriculture_world.dae</uri>
+	   
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

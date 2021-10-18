@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+<grid>false</grid>
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+      <ode>
+        <solver>
+          <iters>50</iters>
+          <island_threads>4</island_threads>
+        </solver>
+      </ode>
+    </physics>   
+
+    <scene>
+      <shadows>false</shadows>
+      <grid>false</grid>
+      <sky>
+        <clouds>
+          <speed>4</speed>
+        </clouds>
+      </sky>      
+    </scene>
+
+
+
+  <include>
+      <uri>model://farm1</uri>
+<pose>1.424045 -8.25 0.15 -0.02 0.029 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://green_house</uri>
+<pose>10.523 -2.987 0.1 -1.57 -3.14 0</pose>
+    </include>
+<!--   <include>
+      <uri>model://ground_plane</uri>
+    </include> -->
+
+  </world>
+</sdf>

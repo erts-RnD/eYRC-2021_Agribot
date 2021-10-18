@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="plant">
+      <link name="plant">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://plant/meshes/plant.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box><size>2.32 1 1</size></box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+</sdf>

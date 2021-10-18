@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="plant_4">
+    	<static>false</static>
+       <link name="plant_link">
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <mass>30</mass>
+        </inertial>
+         <visual name="visual">
+          <pose>0 0 0 0 0 -0.277507351</pose>
+          <geometry>
+            <mesh><uri>model://plant/meshes/plant.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <pose>0 0 0.125 0 0 0</pose>
+          <geometry>
+            <box><size>0.3 0.3 0.25</size></box>
+          </geometry>
+        </collision>
+      </link>
+   
+      <link name="t_link_0">
+        <pose>-0.297 0.244 0.669 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_0" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_0</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_0" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_1">
+        <pose>0.073 0.375 1.175 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_1" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_1</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_1" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_2">
+        <pose>0.196 -0.202 1.528 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_2" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_2</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_2" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_3">
+        <pose>0.054 -0.237 0.732 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_3" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_3</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_3" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_4">
+        <pose>-0.236 -0.275 0.851 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_4" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_4</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_4" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_5">
+        <pose>-0.318 0.010 1.158 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_5" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_5</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_5" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_6">
+        <pose>0.351 0.120 1.158 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_6" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_6</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_6" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_7">
+        <pose>-0.039 -0.257 1.451 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_7" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_7</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_7" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_8">
+        <pose>-0.236 -0.189 1.233 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_8" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_8</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_8" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+   
+      <link name="t_link_9">
+        <pose>-0.318 0.010 1.599 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.05</radius></sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://tomato/meshes/tomato.obj</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="t_joint_9" type="fixed">
+        <parent>plant_link</parent>
+        <child>t_link_9</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+        </axis>
+<!--         <physics>
+          <ode>
+            <erp>1</erp>
+            <cfm>1</cfm>
+          </ode>
+        </physics> -->
+        <sensor name="force_torque" type="force_torque">
+          <always_on>true</always_on>
+          <update_rate>250</update_rate>
+          <plugin name="breakable_9" filename="libBreakableJointPlugin.so">
+            <breaking_force_N>10</breaking_force_N>
+          </plugin>
+        </sensor>
+      </joint>
+  </model>
+</sdf>

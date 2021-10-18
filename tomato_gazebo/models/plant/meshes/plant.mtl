@@ -1,0 +1,109 @@
+# Blender MTL File: 'None'
+# Material Count: 9
+
+newmtl Concreto_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Ks ../materials/textures/Blacktop Old 01000.jpg
+
+newmtl Folha_01_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.980000
+illum 9
+map_Kd ../materials/textures/63dcd294f93a0b7ace790235c4ba39ef.jpg
+map_Ks ../materials/textures/63dcd294f93a0b7ace790235c4ba39ef000.jpg
+
+newmtl Folha_02_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.980000
+illum 9
+map_Kd ../materials/textures/ed9e7c9027bb1a7ce7446cdc72db7f74.jpg
+map_Ks ../materials/textures/ed9e7c9027bb1a7ce7446cdc72db7f74000.jpg
+
+newmtl Folha_03_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.980000
+illum 9
+map_Kd ../materials/textures/71fe8183a61efe0ee13dd227f8b8d9c3.jpg
+map_Ks ../materials/textures/71fe8183a61efe0ee13dd227f8b8d9c3000.jpg
+
+newmtl Folha_04_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.980000
+illum 9
+map_Kd ../materials/textures/1f8b885fe069f27cf54442ebee0ae86f.jpg
+map_Ks ../materials/textures/1f8b885fe069f27cf54442ebee0ae86f000.jpg
+
+newmtl Folha_05_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.980000
+illum 9
+map_Kd ../materials/textures/add89bd5cc5bdcfc48a154c468db9913.jpg
+map_Ks ../materials/textures/add89bd5cc5bdcfc48a154c468db9913000.jpg
+
+newmtl Folha_06_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.980000
+illum 9
+map_Kd ../materials/textures/4d4364ff64b7070b8c8959d63d221927.jpg
+map_Ks ../materials/textures/4d4364ff64b7070b8c8959d63d221927000.jpg
+
+newmtl Galhos_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd ../materials/textures/50dfc689d35db50a980cbdfb5f4316ad.jpg
+map_Ks ../materials/textures/50dfc689d35db50a980cbdfb5f4316ad000.jpg
+
+newmtl Substrato_-_Color.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd ../materials/textures/ecc5c7f8216d5a90a01f309f2ba2ef05.jpg
+map_Ks ../materials/textures/ecc5c7f8216d5a90a01f309f2ba2ef05000.jpg

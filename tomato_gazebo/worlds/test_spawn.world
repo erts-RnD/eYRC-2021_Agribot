@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+	<world name="default">
+		<physics type="ode">
+			<max_step_size>0.004</max_step_size>
+			<real_time_factor>1</real_time_factor>
+			<real_time_update_rate>250</real_time_update_rate>
+			<ode>
+				<solver>
+					<iters>50</iters>
+					<island_threads>4</island_threads>
+				</solver>
+			</ode>
+		</physics>
+		<scene>
+			<shadows>false</shadows>
+			<grid>false</grid>
+			<sky>
+				<clouds>
+					<speed>4</speed>
+				</clouds>
+			</sky>
+		</scene>
+		<include>
+			<uri>model://sun</uri>
+		</include>
+		<include>
+			<uri>model://ground_plane</uri>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_0</name>
+			<pose>0 0 0 0 0 0.9501907210390527</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_1</name>
+			<pose>1 0 0 0 0 0.6496009529112812</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_2</name>
+			<pose>2 0 0 0 0 0.8103134429105857</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_3</name>
+			<pose>3 0 0 0 0 1.9155484421523403</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_4</name>
+			<pose>4 0 0 0 0 1.946699252902061</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_5</name>
+			<pose>0 1 0 0 0 3.08895871190208</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_6</name>
+			<pose>1 1 0 0 0 1.6629178224788665</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_7</name>
+			<pose>2 1 0 0 0 2.2095710508754767</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_8</name>
+			<pose>3 1 0 0 0 3.1254881333579743</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_9</name>
+			<pose>4 1 0 0 0 2.5973043456111893</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_10</name>
+			<pose>0 2 0 0 0 2.0621819205604184</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_11</name>
+			<pose>1 2 0 0 0 2.3850574358816368</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_12</name>
+			<pose>2 2 0 0 0 1.3554191512845355</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_13</name>
+			<pose>3 2 0 0 0 1.9179283211432245</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_14</name>
+			<pose>4 2 0 0 0 1.9647015197997921</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_15</name>
+			<pose>0 3 0 0 0 1.6480386552952162</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_16</name>
+			<pose>1 3 0 0 0 2.3178949749082354</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_17</name>
+			<pose>2 3 0 0 0 0.9981659993758384</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_18</name>
+			<pose>3 3 0 0 0 0.4208985559377873</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_19</name>
+			<pose>4 3 0 0 0 0.017628788036459488</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_20</name>
+			<pose>0 4 0 0 0 2.8774781532100704</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_21</name>
+			<pose>1 4 0 0 0 0.5663701087339951</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_22</name>
+			<pose>2 4 0 0 0 2.235401395284901</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_23</name>
+			<pose>3 4 0 0 0 2.443893806512434</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_24</name>
+			<pose>4 4 0 0 0 0.7248988574037456</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_25</name>
+			<pose>0 5 0 0 0 1.2024330791503197</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_26</name>
+			<pose>1 5 0 0 0 0.5791526130920843</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_27</name>
+			<pose>2 5 0 0 0 0.9222339891229956</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_28</name>
+			<pose>3 5 0 0 0 0.7007186488526564</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_29</name>
+			<pose>4 5 0 0 0 0.229535390328961</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_30</name>
+			<pose>0 6 0 0 0 0.01877245335056894</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_31</name>
+			<pose>1 6 0 0 0 2.4733826226160054</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_32</name>
+			<pose>2 6 0 0 0 2.4737253940690955</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_33</name>
+			<pose>3 6 0 0 0 1.3037243171546091</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_34</name>
+			<pose>4 6 0 0 0 3.0945625048587013</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_35</name>
+			<pose>0 7 0 0 0 2.023215448416668</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_36</name>
+			<pose>1 7 0 0 0 1.3986517327927162</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_37</name>
+			<pose>2 7 0 0 0 2.37256386082513</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_38</name>
+			<pose>3 7 0 0 0 2.5642782293087727</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_39</name>
+			<pose>4 7 0 0 0 2.570870873106727</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_40</name>
+			<pose>0 8 0 0 0 0.7503034892150906</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_41</name>
+			<pose>1 8 0 0 0 1.3014653733691925</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_42</name>
+			<pose>2 8 0 0 0 2.8768819616959256</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_43</name>
+			<pose>3 8 0 0 0 2.63686429633587</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_44</name>
+			<pose>4 8 0 0 0 0.38418782683632763</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_45</name>
+			<pose>0 9 0 0 0 2.0923180963190076</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_46</name>
+			<pose>1 9 0 0 0 3.0773022270094477</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_47</name>
+			<pose>2 9 0 0 0 2.7508447633279376</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_48</name>
+			<pose>3 9 0 0 0 1.0909425893895366</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_49</name>
+			<pose>4 9 0 0 0 1.064887338198934</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_50</name>
+			<pose>0 10 0 0 0 3.103231781966376</pose>
+		</include>
+		<include>
+			<uri>model://tomato_plant</uri>
+			<name>plant_51</name>
+			<pose>1 10 0 0 0 2.6191734367223356</pose>
+		</include>
+	</world>
+</sdf>

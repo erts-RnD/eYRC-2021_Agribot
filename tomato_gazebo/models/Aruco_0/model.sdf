@@ -1,0 +1,21 @@
+<?xml version ="1.0"?>
+<sdf version="1.6">
+  <model name="start_zone">
+    <static>true</static>
+    <link name="link">
+
+      <visual name="visual1">
+        <cast_shadows>false</cast_shadows>
+	      <pose> 0 0 0.1 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://Aruco_0/meshes/start_zone.obj</uri>
+           <!--  <scale>0.05 0.05 0.05</scale> -->
+	   
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

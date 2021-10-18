@@ -1,0 +1,103 @@
+<sdf version="1.6">
+  <model name="green_house">
+    <static>true</static>
+
+
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+             <scale>0.001 0.001 0.001</scale>
+            <uri>file://green_house/meshes/greenhouse_eyantra_glass.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="branch">
+        <geometry>
+          <mesh>
+                <scale>0.001 0.001 0.001</scale>
+            <uri>file://green_house/meshes/greenhouse_eyantra_glass.stl</uri>
+
+          </mesh>
+        </geometry>
+
+<material>
+  <script>
+    <name>Gazebo/GreenTransparent</name>
+    <uri>file://media/materials/scripts/gazebo.material</uri>
+  </script>
+</material>
+
+
+      </visual>
+    </link>
+
+
+    <link name="link2">
+      <collision name="collision2">
+        <geometry>
+          <mesh>
+             <scale>0.001 0.001 0.001</scale>
+            <uri>file://green_house/meshes/greenhouse_eyantra_skeleton.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="branch2">
+        <geometry>
+          <mesh>
+                <scale>0.001 0.001 0.001</scale>
+            <uri>file://green_house/meshes/greenhouse_eyantra_skeleton.stl</uri>
+
+          </mesh>
+        </geometry>
+
+
+      <material> 
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.1 0.1 0.2 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material> 
+
+      </visual>
+    </link>
+
+
+    <link name="link3">
+ <pose>9.7 5.5 -0.2 0 3.14 0</pose>
+      <collision name="logo">
+        <geometry>
+          <mesh>
+       <scale>400 400 400</scale>
+            <uri>file://green_house/meshes/logo2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="logo_c">
+        <geometry>
+          <mesh>
+  <scale>400 400 400</scale>
+            <uri>file://green_house/meshes/logo2.dae</uri>
+
+          </mesh>
+        </geometry>
+
+
+
+      </visual>
+    </link>
+
+
+        <joint name="logo" type="fixed">
+            <pose>0 0 0 0 0 0</pose>
+            <child>link3</child>
+            <parent>link2</parent>
+  
+        </joint>
+
+
+
+
+
+  </model>
+</sdf>

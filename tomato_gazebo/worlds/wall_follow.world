@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+
+	<world name="default">
+
+    <light name="light0" type="directional">
+      <pose frame="">0 -18.818 8 0.75 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+    <light name="light1" type="directional">
+      <pose frame="">0 -1.26453 6 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+
+    <light name="light2" type="directional">
+      <pose frame="">>0 7.3198 6 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+
+    <light name="light3" type="directional">
+      <pose frame="">3.9239 1.64974 4 0 1.2 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+    <light name="light4" type="directional">
+      <pose frame="">-2.5 4.649 4 0 -0.95 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+
+    <light name="light5" type="directional">
+      <pose frame="">0.454419 12.4783 5 -0.8 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+
+		<scene>
+		<shadows>false</shadows>
+		<grid>false</grid>
+		<sky>
+		<clouds>
+		  <speed>4</speed>
+		</clouds>
+		</sky>      
+		</scene>
+
+
+		<include>
+		<uri>model://farm1</uri>
+		<pose>1.424045 -8.25 0.15 -0.02 0.029 0</pose>
+		</include>
+
+
+		<include>
+		<uri>model://green_house</uri>
+		<pose>10.523 -2.987 0.1 1.57159 -0.001593 -3.14159</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough00</name>
+		<pose>0 0 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough01</name>
+		<pose>0 0.8 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough02</name>
+		<pose>0 1.6 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough03</name>
+		<pose>0 2.4 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough04</name>
+		<pose>0 3.2 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough05</name>
+		<pose>0 4.0 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough06</name>
+		<pose>0 4.8 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough07</name>
+		<pose>0 5.6 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough08</name>
+		<pose>0 6.4 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough09</name>
+		<pose>0 7.2 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough10</name>
+		<pose>1.62 0 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough11</name>
+		<pose>1.62 0.8 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough12</name>
+		<pose>1.62 1.6 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough13</name>
+		<pose>1.62 2.4 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough14</name>
+		<pose>1.62 3.2 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough15</name>
+		<pose>1.62 4.0 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough16</name>
+		<pose>1.62 4.8 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough17</name>
+		<pose>1.62 5.6 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough18</name>
+		<pose>1.62 6.4 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+		<include>
+		<uri>model://trough</uri>
+		<name>trough19</name>
+		<pose>1.62 7.2 0.09 1.57 0 1.57</pose>
+		</include>
+
+
+
+	</world>
+</sdf>

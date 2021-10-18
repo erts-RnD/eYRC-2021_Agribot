@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<launch>
+	<arg name="record" default="false"/>
+	<arg name="duration" default="20"/>
+	<arg name="rec_name" default="turtle_record.bag"/>
+
+	 <!-- Recording section or Rosbag node --> <!-- DO NOT EDIT THIS PART -->
+	<group if="$(arg record)">
+		<node name="rosbag_record_turtle" pkg="rosbag" type="record"
+		   args="record -O $(find ebot_gazebo)/bag_files/$(arg rec_name) --duration=$(arg duration) --chunksize=10 /turtle1/cmd_vel /turtle1/pose" output="screen"/>
+
+	</group>
+	
+	<!-- Turtlesim node -->
+	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+
+	<!-- Turtle Rotate node -->
+	<node pkg="ebot_gazebo" type="turtle_move.py" name="node_turtle_revolve" output="screen"/>
+</launch>

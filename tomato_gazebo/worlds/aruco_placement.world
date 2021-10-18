@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+
+	<world name="default">
+		<include>
+		<uri>model://Aruco_00</uri>
+		<name>Aruco_l00</name>
+		<pose>-0.21 0 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_01</uri>
+		<name>Aruco_l01</name>
+		<pose>-0.21 0.8 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_02</uri>
+		<name>Aruco_l02</name>
+		<pose>-0.21 1.6 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_03</uri>
+		<name>Aruco_l03</name>
+		<pose>-0.21 2.4000000000000004 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_04</uri>
+		<name>Aruco_l04</name>
+		<pose>-0.21 3.2 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_05</uri>
+		<name>Aruco_l05</name>
+		<pose>-0.21 4.0 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_06</uri>
+		<name>Aruco_l06</name>
+		<pose>-0.21 4.8 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_07</uri>
+		<name>Aruco_l07</name>
+		<pose>-0.21 5.6 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_08</uri>
+		<name>Aruco_l08</name>
+		<pose>-0.21 6.3999999999999995 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_09</uri>
+		<name>Aruco_l09</name>
+		<pose>-0.21 7.199999999999999 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_10</uri>
+		<name>Aruco_l10</name>
+		<pose>1.4100000000000001 0 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_11</uri>
+		<name>Aruco_l11</name>
+		<pose>1.4100000000000001 0.8 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_12</uri>
+		<name>Aruco_l12</name>
+		<pose>1.4100000000000001 1.6 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_13</uri>
+		<name>Aruco_l13</name>
+		<pose>1.4100000000000001 2.4000000000000004 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_14</uri>
+		<name>Aruco_l14</name>
+		<pose>1.4100000000000001 3.2 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_15</uri>
+		<name>Aruco_l15</name>
+		<pose>1.4100000000000001 4.0 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_16</uri>
+		<name>Aruco_l16</name>
+		<pose>1.4100000000000001 4.8 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_17</uri>
+		<name>Aruco_l17</name>
+		<pose>1.4100000000000001 5.6 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_18</uri>
+		<name>Aruco_l18</name>
+		<pose>1.4100000000000001 6.3999999999999995 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_19</uri>
+		<name>Aruco_l19</name>
+		<pose>1.4100000000000001 7.199999999999999 0.45 0 0 1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_00</uri>
+		<name>Aruco_r00</name>
+		<pose>0.21 0 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_01</uri>
+		<name>Aruco_r01</name>
+		<pose>0.21 0.8 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_02</uri>
+		<name>Aruco_r02</name>
+		<pose>0.21 1.6 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_03</uri>
+		<name>Aruco_r03</name>
+		<pose>0.21 2.4000000000000004 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_04</uri>
+		<name>Aruco_r04</name>
+		<pose>0.21 3.2 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_05</uri>
+		<name>Aruco_r05</name>
+		<pose>0.21 4.0 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_06</uri>
+		<name>Aruco_r06</name>
+		<pose>0.21 4.8 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_07</uri>
+		<name>Aruco_r07</name>
+		<pose>0.21 5.6 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_08</uri>
+		<name>Aruco_r08</name>
+		<pose>0.21 6.3999999999999995 0.45 0 0 -1.57</pose>
+		</include>
+
+		<include>
+		<uri>model://Aruco_09</uri>
+		<name>Aruco_r09</name>
+		<pose>0.21 7.199999999999999 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_10</uri>
+		<name>Aruco_r10</name>
+		<pose>1.83 0 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_11</uri>
+		<name>Aruco_r11</name>
+		<pose>1.83 0.8 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_12</uri>
+		<name>Aruco_r12</name>
+		<pose>1.83 1.6 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_13</uri>
+		<name>Aruco_r13</name>
+		<pose>1.83 2.4000000000000004 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_14</uri>
+		<name>Aruco_r14</name>
+		<pose>1.83 3.2 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_15</uri>
+		<name>Aruco_r15</name>
+		<pose>1.83 4.0 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_16</uri>
+		<name>Aruco_r16</name>
+		<pose>1.83 4.8 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_17</uri>
+		<name>Aruco_r17</name>
+		<pose>1.83 5.6 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_18</uri>
+		<name>Aruco_r18</name>
+		<pose>1.83 6.3999999999999995 0.45 0 0 -1.57</pose>
+		</include>
+
+
+		<include>
+		<uri>model://Aruco_19</uri>
+		<name>Aruco_r19</name>
+		<pose>1.83 7.199999999999999 0.45 0 0 -1.57</pose>
+		</include>
+
+	</world>
+</sdf>

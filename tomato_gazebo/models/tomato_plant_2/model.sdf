@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="tomato_plant_2">
+	<static>true</static>
+      <link name="tomato_plant_link">
+
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>20</mass>
+          <inertia>
+            <ixx>0.2006</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.2006</iyy>
+            <iyz>0</iyz>
+            <izz>0.4</izz>
+          </inertia>
+        </inertial>
+
+
+        <visual name="visual">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://tomato_plant_2/meshes/tomato_plant_2.obj</uri></mesh>
+          </geometry>
+        </visual>
+
+        <collision name="collision">
+          <pose>0 0 0.01 0 0 0</pose>
+       <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+        </collision>
+      </link>
+
+    
+    </model>
+</sdf>

@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+
+<!--  
+  Project Name: ebot simulator
+  Created on:   2.10.2020
+  Author: Saail 
+  Maintainer: ROS team
+  Copyright (c) 2020 eYantra IITB 
+
+This is an urdf for agri_bot with base robot as ebot
+
+This urdf is optimized to work only with gazebo simulator.
+(trolley and rg2 are not optimized.(meaning collision are mesh files)
+-->
+
+
+<robot name="agribot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- ebot with  gripper-->
+  <xacro:include filename="$(find ebot_gazebo)/urdf/ebot_trolley_ur5.xacro" />
+
+<!--     basket -->
+<link
+    name="basket">
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+
+        <mesh
+          filename="package://ebot_gazebo/meshes/basket.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+               <mesh
+          filename="package://ebot_gazebo/meshes/basket.STL" scale="0.001 0.001 0.001" />
+
+      </geometry>
+    </collision>
+  </link>
+
+
+    <joint
+    name="ebot_basket"
+    type="fixed">
+    <origin
+      xyz=" 0.25 -0.30 0.35"
+      rpy="1.57 0 1.57" />
+    <parent
+      link="ebot_base" />
+    <child
+      link="basket" />
+
+  </joint> 
+
+
+  <!-- tomato gripper 1-->
+<link
+    name="tomato_gripper_l">
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+
+        <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+               <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder1.stl" scale="0.001 0.001 0.001" />
+
+      </geometry>
+    </collision>
+
+        <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="3.6e-4" ixy="0" ixz="0.0" iyy="3.6e-4" iyz="0" izz="3.6e-4"/>
+    </inertial>
+
+
+
+  </link>
+
+    <joint
+    name="gripper_palm_l"
+    type="fixed">
+    <origin
+      xyz="0.1 0.006 0"
+      rpy="-1.57 0 0" />
+    <parent
+      link="gripper_finger1_finger_tip_link" />
+    <child
+      link="tomato_gripper_l" />
+
+  </joint> 
+
+ <link
+    name="tomato_gripper_r">
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+
+        <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+               <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder1.stl" scale="0.001 0.001 0.001" />
+
+      </geometry>
+    </collision>
+
+        <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="3.6e-4" ixy="0" ixz="0.0" iyy="3.6e-4" iyz="0" izz="3.6e-4"/>
+    </inertial>
+
+  </link>
+
+    <joint
+    name="gripper_plam_r"
+    type="fixed">
+    <origin
+      xyz="0.1 0.006 -0"
+      rpy="-1.57 0 0" />
+    <parent
+      link="gripper_finger2_finger_tip_link" />
+    <child
+      link="tomato_gripper_r" />
+
+  </joint>
+
+         <!-- tomato gripper 2-->
+
+
+ <!-- <link
+    name="tomato_gripper_l">
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+
+        <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder2.stl" scale="0.0013 0.0013 0.0013" />
+      </geometry>
+
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+               <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder2.stl" scale="0.0013 0.0013 0.0013" />
+
+      </geometry>
+    </collision>
+  </link>
+
+    <joint
+    name="tomato_rg2_l"
+    type="fixed">
+    <origin
+      xyz="0.08 -0.01 -0.01"
+      rpy="3.14 0 0" />
+    <parent
+      link="l_finger_link" />
+    <child
+      link="tomato_gripper_l" />
+
+  </joint> 
+
+ <link
+    name="tomato_gripper_r">
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+
+        <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder2.stl" scale="0.0013 0.0013 0.0013" />
+      </geometry>
+
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+               <mesh
+          filename="package://ebot_gazebo/meshes/tomato_holder2.stl" scale="0.0013 0.0013 0.0013" />
+
+      </geometry>
+    </collision>
+  </link>
+
+    <joint
+    name="tomato_rg2_r"
+    type="fixed">
+    <origin
+      xyz="0.08 0.01 -0.01"
+      rpy="0 3.14 0" />
+    <parent
+      link="r_finger_link" />
+    <child
+      link="tomato_gripper_r" />
+
+  </joint> -->
+
+
+<!-- <gazebo>
+    <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+            <arm>
+              <arm_name>gripper_arm</arm_name>
+              <palm_link>${parent}</palm_link>
+              <gripper_link>tomato_gripper_r</gripper_link>
+              <gripper_link>tomato_gripper_l</gripper_link>
+            </arm>
+      <forces_angle_tolerance>100</forces_angle_tolerance>
+      <update_rate>2</update_rate>
+      <grip_count_threshold>1</grip_count_threshold>
+      <max_grip_count>2</max_grip_count>
+      <release_tolerance>0.005</release_tolerance>
+      <disable_collisions_on_attach>true</disable_collisions_on_attach>
+      <contact_topic>__default_topic__</contact_topic>
+    </plugin>
+  </gazebo> -->
+
+
+</robot>

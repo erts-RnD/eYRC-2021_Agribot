@@ -116,7 +116,7 @@
 
 
     <include>
-    <uri>model://task_2</uri>
+    <uri>model://task_3_2</uri>
     <name>plant00</name>
     <pose>0.77 0.04 0.49 0 0 5.34188268943</pose>
     </include>

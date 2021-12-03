@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+    <model name="static_tomato2">
+        <static>true</static>
+      <link name="tomato_link">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://static_tomato2/meshes/static_tomato2.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+<!--             <sphere><radius>0.05</radius></sphere> -->
+            <mesh><uri>model://static_tomato2/meshes/static_tomato2.obj</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+</sdf>

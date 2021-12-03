@@ -1,0 +1,29 @@
+<launch>
+  <!--  agribot with ur5 -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ebot_gazebo)/urdf/agri_bot.xacro'"/>
+  
+  <!-- Spawn the robot model -->
+  <arg name="x" default="0.8"/>
+  <arg name="y" default="-1.362"/>
+  <arg name="z" default="0.169"/>
+  <arg name="yaw" default="1.57"/>
+
+  <!-- Spawn the robot model -->
+  <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+      args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw)" />
+
+  <node pkg="gazebo_ros_link_attacher" name="ebot_stationary" type="attach.py" output="screen"/>
+
+  <!-- load tomato plant with greenhouse model -->
+  <include file="$(find tomato_gazebo)/launch/tomato_static_plant.launch"/>
+
+  <!-- include your manipulation launch file from agri_bot_moveit package -->
+  
+
+  <!-- include your tomato detection script -->
+  
+  
+  <!-- include teleop script or task1.3 script for navigation -->
+  
+
+</launch>

@@ -25,5 +25,19 @@
 
     <!-- include your ros node for manipulation -->
 
+    <!-- Recording nodes -->
+    <arg name="rec_name" default="task3_2.bag"/>
+    <arg name="record" default="false"/>
+    <group if="$(arg record)">
+
+      <node name="state_node" pkg="topic_tools" type="throttle"
+	  args="messages /gazebo/model_states 10.0"/>
+
+      <node name="task1_rosbag" pkg="rosbag" type="record" args="record -O $(find agri_bot_perception)/bag_files/$(arg rec_name)
+	  /gazebo/model_states_throttle 
+	  /odom
+	  /cmd_vel" output="screen"/>
+    </group>
+    <!-- Recording nodes ends-->
   
 </launch>

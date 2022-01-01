@@ -1,0 +1,36 @@
+<launch>
+<!--  ebot with ur5 -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ebot_gazebo)/urdf/agri_bot.xacro'"/>
+  
+
+    <arg name="x" default="0.8"/>
+    <arg name="y" default="-1.42"/>
+    <arg name="z" default="0.169"/>
+    <arg name="yaw" default="1.57"/> 
+
+
+<!-- Spawn the robot model -->
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+        args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw) " />
+
+
+ 
+
+   
+
+<!-- load tomato plant with eyantra greenhouse model -->
+    <include file="$(find tomato_gazebo)/launch/green_house.launch"/>
+
+
+<!-- include your manipulation launch file  -->
+
+
+<!-- include your ros node for manipulation -->
+
+
+
+<!-- include your perception pipeline -->
+
+
+  
+</launch>

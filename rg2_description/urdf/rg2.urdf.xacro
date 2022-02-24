@@ -1,0 +1,293 @@
+<?xml version="1.0" ?>
+<robot  name="rg2_gripper" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="rg2" params="parent">
+        <xacro:property name="pi" value="3.141592654" />
+        <xacro:include filename="$(find rg2_description)/urdf/rg2.gazebo.xacro" />
+        <xacro:include filename="$(find rg2_description)/urdf/rg2.transmissions.xacro" />
+
+        <joint name="wrist_fixed_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="hand_link"/>
+            <origin xyz="0.005 -0.001 0.0" rpy="3.14 0 0"/>
+        </joint>
+        <link name="hand_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/collision/RG2_Hand_col.STL"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/visual/RG2_Hand_vis.STL"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.061902 0.000129 -0.000005" rpy="0.00 0.00 0.00"/>
+                <mass value="1.684558"/>
+                <inertia ixx="0.000862" ixy="0.000000" ixz="0.000000"
+                        iyy="0.002401" iyz="-0.000001"
+                        izz="0.002620" />
+            </inertial>
+        </link>
+        <!-- Left Finger -->
+        <joint name="gripper_joint" type="fixed">
+            <parent link="hand_link"/>
+            <child link="l_moment_arm_link"/>
+            <origin xyz="0.105 0.017 0.010" rpy="0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <!-- <limit velocity="3.14" effort="10.6" lower="${-0.45}" upper="${pi*0.5}" />
+            <dynamics damping="0.1" friction="0.0" />
+            <implicitSpringDamper>True</implicitSpringDamper> -->
+        </joint>
+        <xacro:insert_transmission name="gripper_joint" />
+        <link name="l_moment_arm_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/collision/RG2_LeftMomentArm_col.STL"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/visual/RG2_LeftMomentArm_vis.STL"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.017004 0.006397 -0.010300" rpy="0.00 0.00 0.00"/>
+                <mass value="0.160209"/>
+                <inertia ixx="0.000023" ixy="0.000019" ixz="0.000000"
+                        iyy="0.000072" iyz="0.000000"
+                        izz="0.000083" />
+            </inertial>
+        </link>
+        <joint name="l_finger_2_joint" type="fixed">
+            <parent link="l_moment_arm_link"/>
+            <child link="l_finger_link"/>
+            <origin xyz="0.049 0.026 0.000" rpy="0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <!-- <limit velocity="3.14" effort="10.6" lower="${-pi*0.5}" upper="${pi*0.5}" />
+            <mimic joint="gripper_joint" multiplier="-1"/>
+            <dynamics damping="0.1" friction="0.0" />
+            <implicitSpringDamper>True</implicitSpringDamper> -->
+        </joint>
+        <xacro:mimic_joint_plugin_gazebo name_prefix="l_finger_2_joint"
+                                        parent_joint="gripper_joint"
+                                        mimic_joint="l_finger_2_joint"
+                                        has_pid="false"
+                                        multiplier="-1.0"
+                                        max_effort="10.6" />
+        <link name="l_finger_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/collision/RG2_LeftFinger_col.STL"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/visual/RG2_LeftFinger_vis.STL"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.024695 -0.010178 -0.010001" rpy="0.00 0.00 0.00"/>
+                <mass value="0.081638"/>
+                <inertia ixx="0.000006" ixy="-0.000005" ixz="0.000000"
+                        iyy="0.000025" iyz="0.000000"
+                        izz="0.000026" />
+            </inertial>
+        </link>
+        <joint name="l_finger_passive_joint" type="fixed">
+            <parent link="hand_link"/>
+            <child link="l_truss_arm_link"/>
+            <origin xyz="0.122 0.008 0.010" rpy="0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <!-- <limit velocity="3.14" effort="10.6" lower="${-pi*0.5}" upper="${pi*0.5}" />
+            <mimic joint="gripper_joint" multiplier="1"/>
+            <dynamics damping="0.1" friction="0.0" />
+            <implicitSpringDamper>True</implicitSpringDamper> -->
+        </joint>
+        <xacro:mimic_joint_plugin_gazebo name_prefix="l_finger_passive_joint"
+                                        parent_joint="gripper_joint"
+                                        mimic_joint="l_finger_passive_joint"
+                                        has_pid="false"
+                                        multiplier="1.0"
+                                        max_effort="10.6" />
+        <link name="l_truss_arm_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/collision/RG2_LeftTrussArm_col.STL"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/visual/RG2_LeftTrussArm_vis.STL"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.023075 0.012136 -0.010000" rpy="0.00 0.00 0.00"/>
+                <mass value="0.065927"/>
+                <inertia ixx="0.000010" ixy="0.000010" ixz="0.000000"
+                        iyy="0.000024" iyz="0.000000"
+                        izz="0.000025" />
+            </inertial>
+        </link>
+        <!-- Right Fingr -->
+        <joint name="r_finger_1_joint" type="fixed">
+            <parent link="hand_link"/>
+            <child link="r_moment_arm_link"/>
+            <origin xyz="0.105 -0.017 0.010" rpy="0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <!-- <limit velocity="3.14" effort="10.6" lower="${-pi*0.5}" upper="${pi*0.5}" />
+            <mimic joint="gripper_joint" multiplier="-1"/>
+            <dynamics damping="0.1" friction="0.0" />
+            <implicitSpringDamper>True</implicitSpringDamper> -->
+        </joint>
+        <xacro:mimic_joint_plugin_gazebo name_prefix="r_finger_1_joint"
+                                         parent_joint="gripper_joint"
+                                         mimic_joint="r_finger_1_joint"
+                                         has_pid="false"
+                                         multiplier="-1.0"
+                                         max_effort="10.6" />
+        <link name="r_moment_arm_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/collision/RG2_RightMomentArm_col.STL"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/visual/RG2_RightMomentArm_vis.STL"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.017004 -0.006397 -0.010300" rpy="0.00 0.00 0.00"/>
+                <mass value="0.160209"/>
+                <inertia ixx="0.000023" ixy="-0.000019" ixz="0.000000"
+                        iyy="0.000072" iyz="0.000000"
+                        izz="0.000083" />
+            </inertial>
+        </link>
+        <joint name="r_finger_2_joint" type="fixed">
+            <parent link="r_moment_arm_link"/>
+            <child link="r_finger_link"/>
+            <origin xyz="0.049 -0.026 0.000" rpy="0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <!-- <limit velocity="3.14" effort="10.6" lower="${-pi*0.5}" upper="${pi*0.5}" />
+            <mimic joint="gripper_joint" multiplier="1"/>
+            <dynamics damping="0.1" friction="0.0" />
+            <implicitSpringDamper>True</implicitSpringDamper> -->
+        </joint>
+        <xacro:mimic_joint_plugin_gazebo name_prefix="r_finger_2_joint"
+                                        parent_joint="gripper_joint"
+                                        mimic_joint="r_finger_2_joint"
+                                        has_pid="false"
+                                        multiplier="1.0"
+                                        max_effort="10.6" />
+        <link name="r_finger_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/collision/RG2_RightFinger_col.STL"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/visual/RG2_RightFinger_vis.STL"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.024695 0.010178 -0.010000" rpy="0.00 0.00 0.00"/>
+                <mass value="0.081637"/>
+                <inertia ixx="0.000006" ixy="0.000005" ixz="0.000000"
+                        iyy="0.000025" iyz="0.000000"
+                        izz="0.000026" />
+            </inertial>
+        </link>
+        <joint name="r_finger_passive_joint" type="fixed">
+            <parent link="hand_link"/>
+            <child link="r_truss_arm_link"/>
+            <origin xyz="0.122 -0.008 0.010" rpy="0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <!-- <limit velocity="3.14" effort="10.6" lower="${-pi*0.5}" upper="${pi*0.5}" />
+            <mimic joint="gripper_joint" multiplier="-1"/>
+            <dynamics damping="0.1" friction="0.0" />
+            <implicitSpringDamper>True</implicitSpringDamper> -->
+        </joint>
+        <xacro:mimic_joint_plugin_gazebo name_prefix="r_finger_passive_joint"
+                                        parent_joint="gripper_joint"
+                                        mimic_joint="r_finger_passive_joint"
+                                        has_pid="false"
+                                        multiplier="-1.0"
+                                        max_effort="10.6" />
+        <link name="r_truss_arm_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/collision/RG2_RightTrussArm_col.STL"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://rg2_description/meshes/rg2/visual/RG2_RightTrussArm_vis.STL"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.023075 -0.012136 -0.010000" rpy="0.00 0.00 0.00"/>
+                <mass value="0.065927"/>
+                <inertia ixx="0.000010" ixy="-0.000010" ixz="0.000000"
+                        iyy="0.000024" iyz="0.000000"
+                        izz="0.000025" />
+            </inertial>
+        </link>
+        <!--
+        <gazebo>
+            <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+                <arm>
+                    <arm_name>robot</arm_name>
+                    <palm_link>hand_link</palm_link>
+                    <gripper_link>l_finger_link</gripper_link>
+                    <gripper_link>r_finger_link</gripper_link>
+                </arm>
+                <force_angle_tolerance>100</force_angle_tolerance>
+                <update_rate>4</update_rate>
+                <grip_count_threshold>4</grip_count_threshold>
+                <max_grip_count>8</max_grip_count>
+                <release_tolerance>0.005</release_tolerance>
+                <disable_collision_on_attach>false</disable_collision_on_attach>
+                <contact_topic>__default_topic__</contact_topic>
+            </plugin>
+        </gazebo>
+        -->
+    </xacro:macro>
+</robot>

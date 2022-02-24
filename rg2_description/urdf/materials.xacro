@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<material name="Orange" xmlns:xacro="http://ros.org/wiki/xacro">
+    <color rgba="${255/255} ${108/255} ${10/255} 1.0"/>
+</material>

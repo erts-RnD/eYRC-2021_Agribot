@@ -2,6 +2,7 @@
 
 set -e
 
+echo "v0.1.0"
 
 # define config
 mkdir -p "$HOME/.config/raf"
@@ -10,6 +11,7 @@ mkdir -p "$HOME/.cache/raf"
 raf_token_file="$HOME/.cache/raf/token.json"
 raf_ovpn_file="$HOME/.config/raf/openvpn_config.ovpn"
 api_host="https://raf.e-yantra.org"
+# api_host="http://localhost:8000"
 
 # ensure openvpn exists
 if ! command -v openvpn &> /dev/null; then
@@ -71,6 +73,11 @@ vpn_creds_json=$(curl -L --silent --request GET --url "$api_host/get-openvpn-cre
 
 # create temp file
 temp_vpn_creds=$(mktemp)
+success=$(echo "$vpn_creds_json" | jq -r .success)
+if [ "$success" = "false" ]; then
+  echo "$vpn_creds_json" | jq -r .message
+  exit 1
+fi
 
 # put username and password in tempfile
 echo "$vpn_creds_json" | jq -r .username > "$temp_vpn_creds"
@@ -85,4 +92,3 @@ sudo openvpn --config "$raf_ovpn_file" --auth-user-pass "$temp_vpn_creds"
 
 # delete tempfile
 rm -f "$temp_vpn_creds"
-
